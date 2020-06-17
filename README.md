@@ -13,7 +13,7 @@
 
 2- Building the app for release (two options).
 
-* flutter build appbundle (recommended however not supporting for some Stores)
+* flutter build appbundle (recommended however not supported for some stores)
 * flutter build apk --split-per-abi 
 
 -----------------------------------------------------------------------------------------------------------------------------
