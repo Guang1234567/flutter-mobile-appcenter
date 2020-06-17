@@ -11,9 +11,10 @@
 
 * Go to your flutter project <app dir>/android/app/build.gradle and apply the changes that [Flutter](https://flutter.dev/docs/deployment/android)
 
-2- Building the app for release (two options)
-    * flutter build appbundle (recommended however not supporting for some Stores)
-    * flutter build apk --split-per-abi 
+2- Building the app for release (two options).
+
+* flutter build appbundle (recommended however not supporting for some Stores)
+* flutter build apk --split-per-abi 
 
 -----------------------------------------------------------------------------------------------------------------------------
 
