@@ -1,16 +1,29 @@
-# demoandroidappcenter
+# Build and release an Android app in appcenter
 
-A new Flutter project.
+- [Flutter](https://flutter.dev/docs/deployment/android)
+- [appcenter](https://buildflutter.com/deploying-flutter-apps-via-appcenter/)
 
-## Getting Started
+1.- Adding a launcher icon
+2.- Signing the app
 
-This project is a starting point for a Flutter application.
+* Go to java/jdk/bin and inside execute this code changing USER_NAME for your user
 
-A few resources to get you started if this is your first Flutter project:
+./keytool -genkey -v -keystore c:\Users\USER_NAME\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* Go to your flutter project <app dir>/android/app/build.gradle and apply the changes that [Flutter](https://flutter.dev/docs/deployment/android)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3.- Building the app for release (two options)
+    * flutter build appbundle (recommended however not supporting for some Stores)
+    * flutter build apk --split-per-abi 
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Appcenter: two options
+
+1.- Build the flutter app directly after signing the app you do not need to run flutter build appbundle [appcenter](https://buildflutter.com/deploying-flutter-apps-via-appcenter/) (complex)
+
+This projects is about building the flutter app directly in appcenter.
+
+2.- Generate the apk with flutter build apk --split-per-abi after signing the app and release it in appcenter (simple)
+
+
