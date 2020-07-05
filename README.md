@@ -16,6 +16,14 @@
 * flutter build appbundle (recommended however not supported for some stores)
 * flutter build apk --split-per-abi 
 
+This command results in three APK files:
+
+* <app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk
+* <app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk
+* <app dir>/build/app/outputs/apk/release/app-x86_64-release.apk
+  
+Removing the --split-per-abi flag results in a fat APK that contains your code compiled for all the target ABIs. Such APKs are larger in size than their split counterparts, causing the user to download native binaries that are not applicable to their device’s architecture.
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 Appcenter: two options
